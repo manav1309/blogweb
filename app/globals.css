@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 30 15% 8%;
+    --foreground: 30 8% 92%;
+    --card: 30 12% 12%;
+    --card-foreground: 30 8% 92%;
+    --popover: 30 12% 12%;
+    --popover-foreground: 30 8% 92%;
+    --primary: 30 25% 25%;
+    --primary-foreground: 30 8% 92%;
+    --secondary: 30 15% 15%;
+    --secondary-foreground: 30 8% 92%;
+    --muted: 30 12% 18%;
+    --muted-foreground: 30 8% 65%;
+    --accent: 35 40% 45%;
+    --accent-foreground: 30 8% 92%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 35 40% 45%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #2d1b14 0%, #1a0f0a 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Custom chocolaty theme colors */
+.bg-chocolaty-dark {
+  background: linear-gradient(135deg, #2d1b14 0%, #1a0f0a 100%);
+}
+
+.bg-chocolaty-medium {
+  background: linear-gradient(135deg, #4a3426 0%, #3d2b1f 100%);
+}
+
+.bg-chocolaty-light {
+  background: linear-gradient(135deg, #6b4e3d 0%, #5a4034 100%);
+}
+
+.text-cream {
+  color: #f5f1eb;
+}
+
+.text-beige {
+  color: #e8dcc0;
+}
+
+.text-mocha {
+  color: #d4a574;
+}
+
+.border-chocolaty {
+  border-color: #4a3426;
+}
+
+/* Hover effects */
+.hover-glow:hover {
+  text-shadow: 0 0 8px rgba(212, 165, 116, 0.6);
+  transition: text-shadow 0.3s ease;
+}
+
+/* Modal styles */
+.modal-overlay {
+  background: rgba(29, 17, 12, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+/* Golden Glow Effects */
+@keyframes golden-pulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.2));
+    transform: scale(1);
+  }
+  50% { 
+    filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 32px rgba(255, 215, 0, 0.3));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes golden-shimmer {
+  0% { 
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 24px rgba(255, 193, 7, 0.2));
+  }
+  25% { 
+    filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 32px rgba(255, 193, 7, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 40px rgba(255, 193, 7, 0.4));
+  }
+  75% { 
+    filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 32px rgba(255, 193, 7, 0.3));
+  }
+  100% { 
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 24px rgba(255, 193, 7, 0.2));
+  }
+}
+
+@keyframes orb-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.3),
+      0 0 40px rgba(255, 193, 7, 0.2),
+      0 0 60px rgba(255, 165, 0, 0.1),
+      inset 0 0 20px rgba(255, 215, 0, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.5),
+      0 0 60px rgba(255, 193, 7, 0.3),
+      0 0 90px rgba(255, 165, 0, 0.2),
+      inset 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+}
+
+@keyframes line-shimmer {
+  0% {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 215, 0, 0.2) 25%, 
+      rgba(255, 215, 0, 0.4) 50%, 
+      rgba(255, 215, 0, 0.2) 75%, 
+      transparent 100%);
+  }
+  50% {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 215, 0, 0.3) 25%, 
+      rgba(255, 215, 0, 0.6) 50%, 
+      rgba(255, 215, 0, 0.3) 75%, 
+      transparent 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 215, 0, 0.2) 25%, 
+      rgba(255, 215, 0, 0.4) 50%, 
+      rgba(255, 215, 0, 0.2) 75%, 
+      transparent 100%);
+  }
+}
+
+/* Golden glow classes */
+.golden-glow {
+  animation: golden-pulse 4s ease-in-out infinite;
+}
+
+.golden-shimmer {
+  animation: golden-shimmer 6s ease-in-out infinite;
+}
+
+.golden-orb {
+  animation: orb-glow 5s ease-in-out infinite;
+}
+
+.golden-line {
+  animation: line-shimmer 3s ease-in-out infinite;
+}
+
+.floating-icon {
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 24px rgba(255, 193, 7, 0.2));
+}
+
+.floating-icon:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 40px rgba(255, 193, 7, 0.4));
+  transition: filter 0.3s ease;
+}
+
+/* Animated background elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Scroll animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
